@@ -1,0 +1,235 @@
+.page1-main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    overflow: auto;
+
+    &__req {
+        width: 100%;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    &__timer {
+        min-width: auto;
+        width: 300px;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.master-page1-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.page1{
+    display: flex;
+    width: 100%;
+    height: max-content;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    z-index: 0;
+}
+
+.page1-container{
+    height: 600px;
+    width: 60%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+.inside-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+}
+
+.currency-table {
+    //display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 85%;
+    width: 95%;
+    //overflow: auto; 
+  }
+  
+.currency-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tbody, thead tr { display: block; }
+
+.selected-row td{
+    background-color: #8a8a8a !important;
+}
+
+.currency-table tbody {
+    height: 440px;       /* Just for the demo          */
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+}
+  
+.currency-table th{
+    height: 70px;
+    background-color: #064D7A;
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+    border: 3px solid white;
+}
+.currency-table td {
+    height: 65px;
+    background-color: #B5B5B4;
+    font-size: 25px;
+    font-weight:400;
+    padding: 0;
+    border: 5px solid white;
+    text-align: center;
+}
+
+.no-column{
+    width: 209px;
+}
+.country-column{
+    width: 50%;
+}
+.value-column{
+    width: 30%;
+}
+
+.curd-system{
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    width: 95%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.curd-system span{
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 10px;
+}
+.curd-system input{
+    height: 25px;
+    width: 100px;
+}
+
+button{
+    background-color: #064D7A;
+    color: white;
+    width: 90px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: #186da1;
+}
+
+// popup
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.613);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-popup{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    min-width: 400px;
+    height: 60vh;
+    background-color: #064D7A;
+}
+
+.popup-title{
+    display: flex;
+    height: 50px;
+    background-color: #064D7A;
+    color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #B5B5B4;
+}
+
+.chart{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.global-chart{
+    margin: auto;
+    height: 45%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border-width: 4px;
+    // border-style: solid;
+    // border-color: #B5B5B4;
+}
+.display-chart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 95%;
+    background-color: white;
+}
+
+.delete-popup{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    min-width: 400px;
+    height: 20vh;
+    background-color: #064D7A;
+}
+
+.delete-text{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    color: white;
+}
+.delete-popup-button{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    // align-items: center;
+}
