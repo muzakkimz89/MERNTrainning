@@ -134,54 +134,53 @@ export const Page1 = () => {
                         <div className="delete-popup-button">
                             <button onClick={() => handleDeleteData()}>Confirm</button>
                             <button onClick={() => handleCloseDeletePopup()}>Cancel</button>
-                        </div>
-                        
+                        </div>    
                 </div>               
             </div>
         )}
         
         <div className="page1">   
-        <div className="page1-container">
-            <div className="inside-container">
-                <div className="currency-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th className="no-column">No</th>
-                                <th className="country-column">Country</th>
-                                <th className="value-column">Value</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {country.map((item) => (
-                                <tr 
-                                    onClick={() => handleConsoleLog(item)} 
-                                    onDoubleClick={() => handleDoubleClick()}
-                                    className={clickedRowIndex === item.no ? 'selected-row' : ''}
-                                
-                                >
-                                    <td className="no-column">{item.no}</td>
-                                    <td className="country-column">{item.country}</td>
-                                    <td className="value-column">{item.value}</td>
+            <div className="page1-container">
+                <div className="inside-container">
+                    <div className="currency-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th className="no-column">No</th>
+                                    <th className="country-column">Country</th>
+                                    <th className="value-column">Value</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>      
-                <div className="curd-system">
-                    <div>
-                        <span>Country:</span>
-                        <input value={newCountry} onChange={(e) => setNewCountry(e.target.value)}></input>
+                            </thead>
+                            <tbody>
+                                {country.map((item) => (
+                                    <tr 
+                                        onClick={() => handleConsoleLog(item)} 
+                                        onDoubleClick={() => handleDoubleClick()}
+                                        className={clickedRowIndex === item.no ? 'selected-row' : ''}
+                                    
+                                    >
+                                        <td className="no-column">{item.no}</td>
+                                        <td className="country-column">{item.country}</td>
+                                        <td className="value-column">{item.value}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>      
+                    <div className="curd-system">
+                        <div>
+                            <span>Country:</span>
+                            <input value={newCountry} onChange={(e) => setNewCountry(e.target.value)}></input>
+                        </div>
+                        <div>
+                            <span>Value:</span>
+                            <input value={newValue} onChange={(e) => setNewValue(parseFloat(e.target.value))}></input>
+                        </div>
+                        <button onClick={() => handleAddData()}>add</button>
+                        <button onClick={() => handleOpenDeletePopup()}>delete</button>
                     </div>
-                    <div>
-                        <span>Value:</span>
-                        <input value={newValue} onChange={(e) => setNewValue(parseFloat(e.target.value))}></input>
-                    </div>
-                    <button onClick={() => handleAddData()}>add</button>
-                    <button onClick={() => handleOpenDeletePopup()}>delete</button>
                 </div>
             </div>
-        </div>
         </div>
     </div>
   );

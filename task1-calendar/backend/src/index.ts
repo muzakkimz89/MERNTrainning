@@ -7,14 +7,14 @@ import { client } from './database/database';
 const app = express();
 
 client.connect();
-client.query(`SELECT * FROM "Currency2"`,(err,res)=>{
-    if(!err){
-        console.log(res.rows);
+// client.query(`SELECT * FROM "Currency2"`,(err,res)=>{
+//     if(!err){
+//         console.log(res.rows);
 
-    }else{
-        console.log(err.message);
-    }
-})
+//     }else{
+//         console.log(err.message);
+//     }
+// })
 
 app.use(cors())
 app.use(express.json())

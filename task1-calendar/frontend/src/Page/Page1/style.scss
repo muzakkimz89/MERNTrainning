@@ -1,25 +1,3 @@
-.page1-main {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    gap: 20px;
-    overflow: auto;
-
-    &__req {
-        width: 100%;
-        overflow: auto;
-        display: flex;
-        flex-direction: column;
-    }
-    &__timer {
-        min-width: auto;
-        width: 300px;
-        overflow: auto;
-        display: flex;
-        flex-direction: column;
-    }
-}
-
 .master-page1-container{
     display: flex;
     flex-direction: column;
@@ -52,6 +30,8 @@
 
 }
 
+
+//table
 .currency-table {
     //display: flex;
     // flex-direction: column;
@@ -75,9 +55,9 @@ tbody, thead tr { display: block; }
 }
 
 .currency-table tbody {
-    height: 440px;       /* Just for the demo          */
-    overflow-y: auto;    /* Trigger vertical scroll    */
-    overflow-x: hidden;  /* Hide the horizontal scroll */
+    height: 440px;       
+    overflow-y: auto;    
+    overflow-x: hidden;  
 }
   
 .currency-table th{
@@ -108,6 +88,7 @@ tbody, thead tr { display: block; }
     width: 30%;
 }
 
+//crud system 
 .curd-system{
     display: flex;
     flex-direction: row;
@@ -166,46 +147,6 @@ button:hover{
     background-color: #064D7A;
 }
 
-.popup-title{
-    display: flex;
-    height: 50px;
-    background-color: #064D7A;
-    color: white;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    border-width: 4px;
-    border-style: solid;
-    border-color: #B5B5B4;
-}
-
-.chart{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.global-chart{
-    margin: auto;
-    height: 45%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // border-width: 4px;
-    // border-style: solid;
-    // border-color: #B5B5B4;
-}
-.display-chart{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 95%;
-    height: 95%;
-    background-color: white;
-}
-
 .delete-popup{
     position: relative;
     display: flex;
@@ -233,3 +174,19 @@ button:hover{
     justify-content: space-evenly;
     // align-items: center;
 }
+
+::-webkit-scrollbar {
+    width:9px;
+    height: 9px;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-track {
+    background:#2B5684;
+    border-radius:10px;
+} 
+
+::-webkit-scrollbar-thumb {
+    background: #55789B; 
+    border-radius:10px;
+}  

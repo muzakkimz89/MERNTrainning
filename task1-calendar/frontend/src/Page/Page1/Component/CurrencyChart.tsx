@@ -1,7 +1,7 @@
 // import React from 'react'
 // import "./page1.scss";
 // import { useEffect, useState } from "react";
-import "./style.scss";
+import "./currencyChart.scss";
 import { Line } from "react-chartjs-2";
 import {
     Chart as ChartJS,
@@ -134,10 +134,10 @@ export const CurrencyChart = ({ selectedCountry }: { selectedCountry: CurrencyTy
         </div>
         <div className="chart">
             <div className="global-chart">
-                <div className="display-chart"><Line width="1100px" height="250px" options={options} data={hourlyData}/></div>
+                <div className="display-chart"><Line width="1000px" height="250px" options={options} data={hourlyData}/></div>
             </div>
             <div className="global-chart">
-                <div className="display-chart"><Line width="1100px" height="250px" options={options} data={dailyData}/></div>
+                <div className="display-chart"><Line width="1000px" height="250px" options={options} data={dailyData}/></div>
             </div>
         </div>
     </div>
