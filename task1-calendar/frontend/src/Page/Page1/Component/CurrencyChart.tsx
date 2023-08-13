@@ -37,7 +37,7 @@ export const CurrencyChart = ({ selectedCountry }: { selectedCountry: CurrencyTy
                 label: 'Dataset 1',
                 data: hourlyLabels.map(() => selectedCountry?.value*(Math.random()*0.4)+selectedCountry?.value-(selectedCountry?.value*0.2)),
                 borderColor: "#064D7A",
-                backgroundColor: 'red',
+                backgroundColor: '064D7A',
                 point: false,
             }
         ],
@@ -48,9 +48,9 @@ export const CurrencyChart = ({ selectedCountry }: { selectedCountry: CurrencyTy
         datasets: [
             {
                 label: 'Dataset 1',
-                data: dailyLabels.map(() => selectedCountry?.value*(Math.random()*0.4)+selectedCountry?.value),
+                data: dailyLabels.map(() => selectedCountry?.value*(Math.random()*0.4)+selectedCountry?.value-(selectedCountry?.value*0.2)),
                 borderColor: "#064D7A",
-                // backgroundColor: 'red',
+                backgroundColor: '064D7A',
                 point: false,
                 color:'red'
             }
@@ -58,11 +58,12 @@ export const CurrencyChart = ({ selectedCountry }: { selectedCountry: CurrencyTy
     };
 
     const options = {
+      tooltips: {
+        enabled: false
+      },
       scales: {
         x: {
-          display: true, // Hide x-axis
-          color:'red',
-          
+          display: true, // Hide x-axis         
           grid: {
             display: true, // Hide x-axis grid lines
             lineWidth:2,
@@ -77,30 +78,35 @@ export const CurrencyChart = ({ selectedCountry }: { selectedCountry: CurrencyTy
           },
           ticks: {      
             display: true,              
-            maxTicksLimit: 8,
-            maxRotation: 0    ,
+            maxTicksLimit: 9,
+            maxRotation: 0,
             // color:'red'
+            color:(context:any)=>{
+              // console.log(context)
+              if(context.index<24){
+                return "black"
+              }else{
+                return"white"
+              }
+            }
+            
           },
-          title: {
-            display: true,
-            text: 'X-Axis Label', 
-            position: 'right',
-            // color:'red'
-          },
+          
         },
         y: {
           display: true, // Display y-axis
           color:"red",
           grid: {
             display: true, // Hide y-axis grid lines
-            color:(context:any)=>{
+            lineWidth:(context:any)=>{
               console.log(context)
               if(context.index ===0){
-                return "#064d7a"
+                return 2
               }else{
-                return"white"
+                return 0
               }
-            }
+            },
+            color:"#064d7a"
           },
           ticks: {
             display: false, // Hide y-axis tick points
@@ -134,10 +140,27 @@ export const CurrencyChart = ({ selectedCountry }: { selectedCountry: CurrencyTy
         </div>
         <div className="chart">
             <div className="global-chart">
-                <div className="display-chart"><Line width="1000px" height="250px" options={options} data={hourlyData}/></div>
+              <div className="display-chart">
+                <div className="chart-row">
+                  Value
+                </div>
+                <div className="chart-label">
+                  <Line width="1000px" height="240px" options={options} data={hourlyData}/>
+                  <div className="xaxis">Hrs</div>
+                </div>
+              </div>
             </div>
             <div className="global-chart">
-                <div className="display-chart"><Line width="1000px" height="250px" options={options} data={dailyData}/></div>
+                <div className="display-chart">
+                  <div className="chart-row">
+                    Value
+                  </div>
+                  <div className="chart-label">
+                    <Line width="1000px" height="240px" options={options} data={dailyData}/>
+                    <div className="xaxis">Day</div>
+                  </div>
+                
+                </div>
             </div>
         </div>
     </div>

@@ -6,15 +6,14 @@ import { client } from './database/database';
 
 const app = express();
 
-client.connect();
-// client.query(`SELECT * FROM "Currency2"`,(err,res)=>{
-//     if(!err){
-//         console.log(res.rows);
-
-//     }else{
-//         console.log(err.message);
-//     }
-// })
+const connect= async()=>{
+    try {
+        await client.connect();
+        console.log("Postgre connected")
+    } catch (error) {
+        throw error
+    }
+}
 
 app.use(cors())
 app.use(express.json())
@@ -34,6 +33,7 @@ app.get('/', (req, res) => {
 app.use("/api/v1/currency", currencyData)
 
 app.listen(8000,() => {
+    connect();
     console.log(`listening on http://localhost:8000`);
 })
 
